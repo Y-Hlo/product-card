@@ -1,0 +1,139 @@
+* {
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+  color: #515076;
+}
+.product-catalog__wrapper {
+  width: 1280px;
+  height: 1715px;
+  margin: 0 auto;
+  background-image: url(/images/dandelions-background.png);
+  background-size: 790px 697px;
+  background-color: #FFFFFF;
+  background-repeat: no-repeat;
+  background-position: 85px 0px;
+  position: relative;
+}
+.product-catalog__title {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 70px;
+  line-height: 78px;
+  position: absolute;
+  top: 173px;
+  left: 0;
+  right: 0;
+  width: 100%;
+  text-align: center;
+}
+.product-cards__wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 45px;
+  width: 1110px;
+  height: 1191px;
+  outline: 1px solid transparent;
+  position: absolute;
+  top: 408px;
+  left: 85px;
+  justify-content: center;
+}
+.product-card__wrapper {
+  width: 340px;
+  height: 573px;
+  background-color: #F7F7FA;
+  display: inline-block;
+  padding: 25px 25px 303px 25px;
+  box-shadow: 2px 2px 10px rgba(81, 80, 118, 0.1);
+  outline: 1px solid transparent;
+  position: relative;
+}
+.product-card__img {
+  display: block;
+  margin: 0 auto;
+}
+.product-card__skin-type {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 24px;
+  text-transform: uppercase;
+  color: #A5A3B9;
+  position: absolute;
+  top: 288px;
+}
+.product-card__title {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 27px;
+  position: absolute;
+  top: 309px;
+}
+.product-card__description {
+  position: absolute;
+  width: 287px;
+  height: 36px;
+  top: 348px;
+  left: 25px;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 18px;
+}
+.card-list__wrapper {
+  width: 287px;
+  height: 87px;
+  outline: 1px solid transparent;
+  position: absolute;
+  top: 412px;
+  right: 63px;
+  bottom: 74px;
+  left: 25px;
+}
+.product-card__compound {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 18px;
+  position: absolute;
+  top: 0px;
+}
+.product-card__list-of-ingredients {
+  list-style-type: circle;
+  list-style-position: inside;
+  padding-left: 0;
+  margin-left: 0;
+  margin-top: 23px;
+}
+.product-card__ingredients {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 18px;
+  margin-top: 5px;
+}
+.product-card__price-wrapper {
+  width: 290px;
+  height: 24px;
+  display: inline-block;
+  outline: 1px solid transparent;
+  position: absolute;
+  top: 524px;
+  right: 25px;
+  bottom: 25px;
+  left: 25px;
+}
+.product-card__price-text {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 24px;
+}
+.product-card__price {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 24px;
+  position: absolute; right: 0;
+}
