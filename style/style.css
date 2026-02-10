@@ -16,6 +16,21 @@
   position: relative;
 }
 
+.buttons {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  top: 10;
+}
+
+#recolor-button {
+  background-color: #eeff00;
+}
+
+#recolor-button.active {
+  background-color: #ff00f2;
+}
+
 .product-catalog__title {
   font-style: normal;
   font-weight: 400;
