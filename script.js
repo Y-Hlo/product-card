@@ -36,15 +36,15 @@ function openGoogle() {
 
 // Вывод контента главного заголовка
 
-const contentEl = document.querySelector('.product-catalog__title');
-contentEl.addEventListener('mouseover', function () {
-  console.log(contentEl.textContent);
+const elContent = document.querySelector('.product-catalog__title');
+elContent.addEventListener('mouseover', () => {
+  console.log(elContent.textContent);
 });
 
 // Поменять цвет кнопки
 
-const btn = document.getElementById('recolor-button');
+const btnRecolor = document.getElementById('button-recolor');
 
-btn.addEventListener('click', () => {
-  btn.classList.toggle('active');
+btnRecolor.addEventListener('click', () => {
+  btnRecolor.classList.toggle('active');
 });
