@@ -36,9 +36,9 @@ function openGoogle() {
 
 // Вывод контента главного заголовка
 
-const elContent = document.querySelector('.product-catalog__title');
-elContent.addEventListener('mouseover', () => {
-  console.log(elContent.textContent);
+const productCatalogTitle = document.querySelector('.product-catalog__title');
+productCatalogTitle.addEventListener('mouseover', () => {
+  console.log(productCatalogTitle.textContent);
 });
 
 // Поменять цвет кнопки
