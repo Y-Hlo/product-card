@@ -41,7 +41,7 @@ function buyProduct(currentBudget) {
 buyProduct(100500);
 buyProduct(999);
 
-// Задания 6 и 7: Функция проверка данных агента.
+// Функция проверка данных агента.
 
 const name = 'Ащьф';
 const surname = 'ЛШТШФУМ';
