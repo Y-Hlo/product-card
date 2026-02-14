@@ -1,10 +1,10 @@
 // 1. Функция, принимающая два параметра - город и температуру.
 
-function weather(city, degree) {
+function showWeather(city, degree) {
   console.log(`Сейчас в ${city} температура — ${degree} градусов по Цельсию`);
 }
 
-weather('Махачкала', 7);
+showWeather('Махачкала', 7);
 
 // 2. Функция проверки скорости.
 
@@ -29,7 +29,7 @@ checkSpeed(299792458);
 const productName = 'Лапти';
 const productPrice = 1000;
 
-function buyProduct(currentBudget) {
+function purchaseProduct(currentBudget) {
   if (currentBudget >= productPrice) {
     console.log(`${productName} приобретён. Спасибо за покупку!`);
   } else {
@@ -38,10 +38,10 @@ function buyProduct(currentBudget) {
   }
 }
 
-buyProduct(100500);
-buyProduct(999);
+purchaseProduct(100500);
+purchaseProduct(999);
 
-// Функция проверка данных агента.
+// Функция проверки данных агента.
 
 const name = 'Ащьф';
 const surname = 'ЛШТШФУМ';
