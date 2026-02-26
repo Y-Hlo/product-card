@@ -27,16 +27,16 @@ auto.owner = user;
 
 // 3. Функция проверки скорости
 
-function checkMaxSpeed(auto) {
+function addMaxSpeed(auto) {
   if ("maxSpeed" in auto) {
     return;
   }
   auto.maxSpeed = 333;
 }
 
-checkMaxSpeed(auto);
+addMaxSpeed(auto);
 
-// 4. Функция вывода значения по свойству
+// 4. Функция вывода значения по свойству объекта
 
 function getPropertyValue(obj, key) {
   console.log(obj[key])
@@ -84,7 +84,7 @@ books.push(
 
 // 7. Массив, состоящий из объектов (книг внутри одной вселенной)
 
-const booksSherlock = [
+const sherlockBooks = [
   {
     title: "Этюд в багровых тонах", 
     author: "Артур Конан Дойл", 
@@ -108,11 +108,11 @@ const booksSherlock = [
   }
 ];
 
-const allBooks = [...books, ...booksSherlock];
+const allBooks = [...books, ...sherlockBooks];
 
 // 8 Функция добавления нового свойства объекту внутри массива
 
-function checkRareBooks(allBooks) {
+function addRareStatus(allBooks) {
   return allBooks.map((book) => {
     return {
       ...book,
@@ -121,5 +121,5 @@ function checkRareBooks(allBooks) {
   });
 };
 
-const updatedBooks = checkRareBooks(allBooks);
+const updatedBooks = addRareStatus(allBooks);
 console.table(updatedBooks);
