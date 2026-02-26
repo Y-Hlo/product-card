@@ -38,7 +38,7 @@ addMaxSpeed(auto);
 
 // 4. Функция вывода значения по свойству объекта
 
-function getPropertyValue(obj, key) {
+function logPropertyValue(obj, key) {
   console.log(obj[key])
 }
 
@@ -112,7 +112,7 @@ const allBooks = [...books, ...sherlockBooks];
 
 // 8 Функция добавления нового свойства объекту внутри массива
 
-function addRareStatus(allBooks) {
+function getRareStatus(allBooks) {
   return allBooks.map((book) => {
     return {
       ...book,
@@ -121,5 +121,5 @@ function addRareStatus(allBooks) {
   });
 };
 
-const updatedBooks = addRareStatus(allBooks);
+const updatedBooks = getRareStatus(allBooks);
 console.table(updatedBooks);
