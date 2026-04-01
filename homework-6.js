@@ -1,7 +1,7 @@
 // 1. Объект пользователя
 
 const user = {
-  name: " Donald",
+  name: "Donald",
   surname: "Trump",
   email: "trump@mail.ru",
   age: 79,
