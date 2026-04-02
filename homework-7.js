@@ -30,7 +30,7 @@ console.log(hasKnife);
 // 4. Функция для переворота массива
 
 function reverseArray(arr) {
-  return arr.reverse();
+  arr.reverse();
 }
 
 reverseArray(numbers);
@@ -43,21 +43,17 @@ console.log(kitchenAppliances);
 
 // 7. Фильтрация объектов по содержанию
 
-const filteredComments = comments.filter(function(comment) {
+const filteredCommentsByComEmail = comments.filter(function(comment) {
   return (comment.email.includes(".com"));
 });
 
-console.log(filteredComments);
+console.log(filteredCommentsByComEmail);
 
 // 8. Трансформация данных
 
 const updatedComments = comments.map(function(comment) {
   const updatedComment = { ...comment };
-  if (updatedComment.id <= 5) {
-    updatedComment.postId = 2;
-  } else {
-    updatedComment.postId = 1;
-  }
+  updatedComment.postId = updatedComment.id <= 5 ? 2 : 1;
   return updatedComment;
 });
 
@@ -75,11 +71,7 @@ console.log(shortComments);
 
 const validatedComments = comments.map(function(comment) {
   const validatedComment = { ...comment };
-  if (validatedComment.body.length > 180) {
-    validatedComment.isInvalid = true;
-  } else {
-    validatedComment.isInvalid = false;
-  }
+  validatedComment.isInvalid = validatedComment.body.length > 180;
   return validatedComment;
 });
 
@@ -89,21 +81,21 @@ console.log(validatedComments);
 
 // 11. Извлечение списка почт двумя методами: reduce и map
 
-const emailsReduce = comments.reduce(function(acc, comment) {
-  acc.push(comment.email)
+const emailsByReduce = comments.reduce(function(acc, comment) {
+  acc.push(comment.email);
   return acc;
 }, []);
 
-console.log(emailsReduce);
+console.log(emailsByReduce);
 
-const emailsMap = comments.map(function(comment) {
+const emailsByMap = comments.map(function(comment) {
   return comment.email;
 });
 
-console.log(emailsMap);
+console.log(emailsByMap);
 
 // 12. Преобразование массива почт в строку
 
-const emailsString = emailsMap.join("; ");
+const emailsByJoin = emailsByMap.join("; ");
 
-console.log(emailsString);
+console.log(emailsByJoin);
