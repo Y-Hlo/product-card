@@ -70,9 +70,8 @@ console.log(shortComments);
 // 10. Валидация данных
 
 const validatedComments = comments.map(function(comment) {
-  const validatedComment = { ...comment };
-  validatedComment.isInvalid = validatedComment.body.length > 180;
-  return validatedComment;
+  comment.isInvalid = comment.body.length > 180;
+  return comment;
 });
 
 console.log(validatedComments);
