@@ -17,6 +17,10 @@
       <button id="recolor-all-card-button">Перекрасить фон всех карточек</button>
       <button id="open-google-button">Открыть Google</button>
       <button id="button-recolor">Поменять цвет кнопки</button>
+
+<!-- 5.1. Создание кнопки регистрации -->
+
+      <button id="registration-button">Регистрация</button>
     </div>
     <div class="product-cards__wrapper" id="product-container">
     <template id="product-template">
@@ -38,8 +42,82 @@
     </div>
   </div>
 
-<!-- Подключение файла как модуля -->
- 
+<!-- 3. Верстка footer'а по макету -->
+
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="title-wrapper">
+        <h3 class="footer-title">Product Cards</h3>
+        <p class="footer-title__text">У нас самые лучшие продукты для кожи!</p>
+      </div>
+      <div class="subscription-wrapper">
+        <p class="subscription-text">Подпишись на наши акции:</p>
+        <form class="input-group" id="email-form">
+          <input type="email" name="email" class="subscription-input" placeholder="Введи Email...">
+          <div class="input-divider"></div>
+          <button type="submit" class="input-button">Подписаться</button>
+        </form>
+      </div>
+      <div class="nav-wrapper">
+        <nav>
+          <ul>
+            <li class="nav-title">Быстрые ссылки</li>
+            <li class="nav-text">Главная</li>
+            <li class="nav-text">Магазин</li>
+            <li class="nav-text">Контакты</li>
+          </ul>
+        </nav>
+      </div>
+      <div class="social-icons">
+        <img src="/images/tg-ico.png" alt="Telegram" class="social-ico">
+        <img src="/images/vk-ico.png" alt="VK" class="social-ico">
+      </div>
+    </div>
+    <div class="footer-line"></div>
+    <div class="footer-bottom">
+      <p class="footer-bottom__text">www.product-cards.com©all right reserve</p>
+    </div>
+  </footer>
   <script type="module" src="homework-8.js"></script>
+  <script type="module" src="homework-9.js"></script>
+
+<!-- 5.2. Создание модального окна-->
+
+  <div class="overlay">
+    <div class="modal">
+      <button id="modal-exit__button">X</button>
+      <h3 class="modal-title">Регистрация</h3>
+
+<!-- 6.1. Создание формы для регистрации внутри модального окна -->
+
+      <form class="registration-form" id="registration-form">
+        <label>
+          Имя
+          <input type="text" name="first-name" class="first-name" placeholder="Введите имя" required>
+        </label>
+        <label>
+          Фамилия
+          <input type="text" name="last-name" class="last-name" placeholder="Введите фамилию" required>
+        </label>
+        <label>
+          Дата рождения
+          <input type="date" name="birth-date" class="birth-date" placeholder="Укажите дату рождения" required>
+        </label>
+        <label>
+          Логин
+          <input type="text" name="login" class="login" placeholder="Введите логин" required>
+        </label>
+        <label>
+          Пароль
+          <input type="password" name="password" class="password" placeholder="Введите пароль" required>
+        </label>
+        <label>
+          Подтвердить пароль
+          <input type="password" name="password-confirm" class="password-confirm" placeholder="Повторите пароль" required>
+        </label>
+        <button type="submit" class="reg-button">Зарегистрироваться</button>
+      </form>
+    </div>
+  </div>
 </body>
 </html>
