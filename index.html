@@ -17,9 +17,6 @@
       <button id="recolor-all-card-button">Перекрасить фон всех карточек</button>
       <button id="open-google-button">Открыть Google</button>
       <button id="button-recolor">Поменять цвет кнопки</button>
-
-<!-- 5.1. Создание кнопки регистрации -->
-
       <button id="registration-button">Регистрация</button>
     </div>
     <div class="product-cards__wrapper" id="product-container">
@@ -41,9 +38,6 @@
     </template>
     </div>
   </div>
-
-<!-- 3. Верстка footer'а по макету -->
-
   <footer class="footer">
     <div class="footer-container">
       <div class="title-wrapper">
@@ -78,18 +72,14 @@
       <p class="footer-bottom__text">www.product-cards.com©all right reserve</p>
     </div>
   </footer>
-  <script type="module" src="homework-8.js"></script>
-  <script type="module" src="homework-9.js"></script>
 
-<!-- 5.2. Создание модального окна-->
+<!-- 1. Создание файла main.js -->
 
-  <div class="overlay">
-    <div class="modal">
+  <script type="module" src="main.js"></script>
+  <div class="overlay" id="overlay">
+    <div class="modal" id="modal">
       <button id="modal-exit__button">X</button>
       <h3 class="modal-title">Регистрация</h3>
-
-<!-- 6.1. Создание формы для регистрации внутри модального окна -->
-
       <form class="registration-form" id="registration-form">
         <label>
           Имя
@@ -115,7 +105,7 @@
           Подтвердить пароль
           <input type="password" name="password-confirm" class="password-confirm" placeholder="Повторите пароль" required>
         </label>
-        <button type="submit" class="reg-button">Зарегистрироваться</button>
+        <button type="submit" class="reg-button" id="reg-button">Зарегистрироваться</button>
       </form>
     </div>
   </div>
