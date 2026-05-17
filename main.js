@@ -19,6 +19,8 @@ if (OpenBtn) {
   });
 }
 
+// 5.1 Переписывание логики задания №9
+
 const registrationForm  = new Form('registration-form');
 const regFormElement = document.getElementById('registration-form');
 
