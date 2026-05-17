@@ -6,8 +6,6 @@ class Form {
     this.formElement = document.getElementById(formId);
   }
 
-  // 5.1. Метод I. Для получения всех значений формы.
-
   getValuesForm() {
     const firstNameValue = this.formElement.querySelector('[name="first-name"]').value;
     const lastNameValue = this.formElement.querySelector('[name="last-name"]').value;
@@ -27,14 +25,10 @@ class Form {
     }
   }
 
-// 5.2. Метод II. Для проверки валидности формы 
-
   isValidForm() {
     const valuesForm = this.getValuesForm();
     return this.formElement.checkValidity() && valuesForm.password === valuesForm.PasswordConfirm;
   }
-
-// 5.3. Метод III. Для сброса значений формы.
 
   resetForm() {
     this.formElement.reset();
