@@ -7,27 +7,26 @@ class Form {
   }
 
   getValuesForm() {
-    const firstNameValue = this.formElement.querySelector('[name="first-name"]').value;
-    const lastNameValue = this.formElement.querySelector('[name="last-name"]').value;
-    const dateValue = this.formElement.querySelector('[name="birth-date"]').value
-    const loginValue = this.formElement.querySelector('[name="login"]').value
-    const passwordValue = this.formElement.querySelector('[name="password"]').value
-    const PasswordConfirmValue = this.formElement.querySelector('[name="password-confirm"]').value
+    const values = {};
+    const allInputs = this.formElement.querySelectorAll('input');
 
-    return {
-      firstName: firstNameValue,
-      lastName: lastNameValue,
-      birthDate: dateValue,
-      login: loginValue,
-      password: passwordValue,
-      PasswordConfirm: PasswordConfirmValue,
-      createdOn: new Date(),
-    }
+    allInputs.forEach(input => {
+      values[input.name] = input.value;
+    })
+      values.createdOn = new Date();
+
+    return values;
   }
 
   isValidForm() {
+    const isNativeValid = this.formElement.checkValidity();
     const valuesForm = this.getValuesForm();
-    return this.formElement.checkValidity() && valuesForm.password === valuesForm.PasswordConfirm;
+
+    if ('password' in valuesForm) {
+      return isNativeValid && valuesForm.password === valuesForm['password-confirm'];
+    } else {
+      return isNativeValid;
+    }
   }
 
   resetForm() {
