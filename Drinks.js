@@ -2,7 +2,12 @@
 
 class Drink {
   #temperature = 20;
+
   constructor(name, size, price) {
+    if (new.target === Drink) {
+      throw new Error('нельзя создавать экземпляры абстрактного класса напрямую!');
+    }
+
     this.name = name;
     this.size = size;
     this.price = price;
@@ -61,4 +66,4 @@ class Milkshake extends Drink {
   }
 }
 
-export {Lemonade, Tea, Coffee, Milkshake};
+export {Drink, Lemonade, Tea, Coffee, Milkshake};

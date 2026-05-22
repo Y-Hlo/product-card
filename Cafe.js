@@ -1,4 +1,4 @@
-// 4. Реализация абстрактного класса
+// 4. Реализация класса Cafe
 
 class Cafe {
   constructor(name, location) {
