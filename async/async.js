@@ -1,4 +1,4 @@
-// 2.1. Отображание строки: "Данные загружаются" (если локальное хранилище не заполнено данными и мы еще не сделали запрос).
+// 2.1. Отображание текста о загрузке данных
 
 const localData = localStorage.getItem('users');
 
@@ -6,6 +6,9 @@ if (localData === null) {
   setTimeout(() => {
     fetch('users.json')
       .then(response => {
+        if (!response.ok) {
+          throw new Error("Error loading data");
+        }
         return response.json();
       })
       .then(usersData => {
@@ -15,6 +18,10 @@ if (localData === null) {
         loadingBlock.remove();
 
         renderUsersCards(usersData)
+      })
+      .catch(error => {
+        const loadingBlock = document.getElementById("loading")
+        loadingBlock.textContent = "Ошибка при загрузке данных"
       });
   }, 2000);
 } else {
@@ -22,7 +29,6 @@ if (localData === null) {
   loadingBlock.remove();
 
   const parsedData = JSON.parse(localData);
-
   renderUsersCards(parsedData);
 }
 
@@ -64,20 +70,30 @@ deleteOneBtn.addEventListener('click', () => {
 
   const currentUsers = JSON.parse(localStorage.getItem('users'));
   const filteredUsers = currentUsers.filter(user => {
-    return user.id !== idToDelete
+    return user.id !== Number(idToDelete);
   });
-  localStorage.setItem('users', JSON.stringify(filteredUsers))
+  localStorage.setItem('users', JSON.stringify(filteredUsers));
 });
 
 const getAllBtn = document.getElementById("get-all-btn");
 
 getAllBtn.addEventListener('click', () => {
+  const currentStorageUsers = JSON.parse(localStorage.getItem('users'));
+
+  if (currentStorageUsers !== null && currentStorageUsers.length === 4) {
+    return alert("Все пользователи уже отображены!");
+  } else {
   fetch('users.json')
-      .then(response => {
-        return response.json();
-      })
-      .then(usersData => {
-        localStorage.setItem('users', JSON.stringify(usersData));
-        renderUsersCards(usersData);
-      });
+    .then(response => {
+      return response.json();
+    })
+    .then(usersData => {
+      localStorage.setItem('users', JSON.stringify(usersData));
+      
+      const userContainer = document.getElementById("users-container");
+      userContainer.innerHTML = "";
+
+      renderUsersCards(usersData);
+    });
+  }
 });
